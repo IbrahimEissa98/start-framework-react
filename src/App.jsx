@@ -4,7 +4,7 @@ import Navbar from "./Components/Navbar";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import About from "./Pages/About";
 import Portfolio from "./Pages/Portfolio";
-import Contact from "./Pages/contact";
+import Contact from "./Pages/Contact";
 import Layout from "./Pages/Layout";
 import Home from "./Pages/Home";
 import PageNotFound from "./Pages/PageNotFound";
