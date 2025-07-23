@@ -14,30 +14,31 @@ export default function Portfolio() {
   const images = [image1, image2, image3, image4, image5, image6];
   const [currentImg, setCurrentImg] = useState(0);
 
+  function keysEvents(e) {
+    if (e.key === "Escape" && isOpenLightBox) {
+      closeLightBox();
+    }
+    if (e.key === "ArrowRight" && isOpenLightBox) {
+      nextImg();
+    }
+    if (e.key === "ArrowLeft" && isOpenLightBox) {
+      previousImg();
+    }
+  }
+
   useEffect(() => {
     document.title = "Portfolio";
     // console.log("Component did Mount");
-  }),
-    [];
-  useEffect(() => {
-    function keysEvents(e) {
-      if (e.key === "Escape" && isOpenLightBox) {
-        closeLightBox();
-      }
-      if (e.key === "ArrowRight" && isOpenLightBox) {
-        nextImg();
-      }
-      if (e.key === "ArrowLeft" && isOpenLightBox) {
-        previousImg();
-      }
-    }
-    window.addEventListener("keydown", keysEvents);
-    // console.log("Component did update");
 
     return () => {
       window.removeEventListener("keydown", keysEvents);
       // console.log("component will unmount");
     };
+  }),
+    [];
+  useEffect(() => {
+    window.addEventListener("keydown", keysEvents);
+    // console.log("Component did update");
   });
 
   function openLightBox(index) {
