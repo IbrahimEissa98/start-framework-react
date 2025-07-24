@@ -34,8 +34,7 @@ export default function Portfolio() {
       window.removeEventListener("keydown", keysEvents);
       // console.log("component will unmount");
     };
-  }),
-    [];
+  });
   useEffect(() => {
     window.addEventListener("keydown", keysEvents);
     // console.log("Component did update");
