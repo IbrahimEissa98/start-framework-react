@@ -29,15 +29,14 @@ export default function Portfolio() {
   useEffect(() => {
     document.title = "Portfolio";
     // console.log("Component did Mount");
-
+  }, []);
+  useEffect(() => {
+    window.addEventListener("keydown", keysEvents);
+    // console.log("Component did update");
     return () => {
       window.removeEventListener("keydown", keysEvents);
       // console.log("component will unmount");
     };
-  });
-  useEffect(() => {
-    window.addEventListener("keydown", keysEvents);
-    // console.log("Component did update");
   });
 
   function openLightBox(index) {
